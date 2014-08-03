@@ -1,0 +1,8 @@
+#!/bin/zsh
+echo "\n\e[38;5;222m{ "$(date)"\e[0m">> test-output
+rdmd -unittest --main "$@" &>> test-output
+echo "\e[38;5;244m}\e[0m">> test-output
+
+# Adding to watchman
+# watchman watch ~/dev/pearls
+# watchman -- trigger ~/dev/pearls run-tests '*.d' -- ~/dev/pearls/run-tests
